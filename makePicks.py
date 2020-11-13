@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import argparse
+from argparse import ArgumentError
 import requests
 import json
 from tabulate import tabulate
+import datetime
 
 
 def find_stats(team: str, stats: list):
@@ -45,6 +47,12 @@ parser.add_argument("year", type=int, help="Season year")
 parser.add_argument("week", type=int, help="Season week number")
 
 cli_args = parser.parse_args()
+
+if cli_args.week < 1 or cli_args.week > 17:
+    raise ValueError(f"Invalid week - got {cli_args.week}; expected range [1, 17]")
+
+if cli_args.year > datetime.datetime.today().year:
+    raise ValueError(f"Expected the current year or less; got {cli_args.year}")
 
 with open("sportsdataio.key", "r") as key_file:
     api_key = key_file.readline()

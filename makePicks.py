@@ -3,7 +3,6 @@
 import argparse
 from argparse import ArgumentError
 import requests
-import json
 from tabulate import tabulate
 import datetime
 
@@ -77,6 +76,8 @@ for game in schedule:
     away_team = game["AwayTeam"]
     home_stats = find_stats(home_team, team_stats)
     away_stats = find_stats(away_team, team_stats)
+    assert home_stats
+    assert away_stats
 
     winner, score = calc_score(home_stats, away_stats)
 

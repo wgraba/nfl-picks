@@ -128,10 +128,12 @@ data.sort(key=data_sort)
 table = Table(title=f"{cli_args.year} Week {cli_args.week} Picks")
 table.add_column("Home Team")
 table.add_column("Away Team")
-table.add_column("Winner")
+table.add_column("Winner", style="bold")
+# table.add_column("Rank", style="bold")
 table.add_column("Score")
 
 for d in data:
     table.add_row(d["Home Team"], d["Away Team"], d["Winner"], str(d["Score"]))
+    # table.add_row(d["Home Team"], d["Away Team"], d["Winner"], str(data.index(d) + 1), str(d["Score"]))
 
 print(table)

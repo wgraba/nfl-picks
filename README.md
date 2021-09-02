@@ -36,5 +36,17 @@ TB           DAL          TB            215
 
 A higher `Score` means a greater confidence.
 
+# Calculations
+The `Score` is determined by the though that teams that score more
+than their opponents tend to win games more often 🤔.
+
+This is very simplistic -
+* An entire season of stats (partial if currents season) is used
+* Determine difference between home team points and points against
+* Determine difference between away team points and points against
+* Whichever potins differential is greater is the winning team
+  * The `Score` is calculated by the different of winning team's points 
+    differential and the losing team's points differential
+
 # TODO
 - [ ] Move to `rich` python package instead of `tabulate`

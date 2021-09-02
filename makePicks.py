@@ -2,9 +2,11 @@
 
 import argparse
 import requests
-from tabulate import tabulate
 import datetime
 import os
+from rich import print
+from rich.table import Table
+from rich.traceback import install
 
 
 def find_stats(team: str, stats: list):
@@ -47,6 +49,9 @@ parser.add_argument("year", type=int, help="Season year")
 parser.add_argument("week", type=int, help="Season week number")
 
 parser.add_argument(
+    "-d", "--debug", action="store_true", help="Enable extra debug info"
+)
+parser.add_argument(
     "-s",
     "--stats_year",
     type=int,
@@ -55,6 +60,7 @@ parser.add_argument(
 
 cli_args = parser.parse_args()
 
+# Verify CLI Args
 if not os.path.exists(cli_args.api_key):
     raise ValueError(f"File '{cli_args.api_key}' does not exist!")
 
@@ -65,6 +71,8 @@ if cli_args.year > datetime.datetime.today().year:
     raise ValueError(
         f"Season Year: expected the current year or less; got {cli_args.year}"
     )
+
+install(show_locals=cli_args.debug)  # Install Rich exception printing
 
 if cli_args.stats_year:
     if cli_args.stats_year > datetime.datetime.today().year:
@@ -115,5 +123,15 @@ for game in schedule:
         }
     ]
 
-sorted_data = data.sort(key=data_sort)
-print(tabulate(data, headers="keys"))
+# Print results
+data.sort(key=data_sort)
+table = Table(title=f"{cli_args.year} Week {cli_args.week} Picks")
+table.add_column("Home Team")
+table.add_column("Away Team")
+table.add_column("Winner")
+table.add_column("Score")
+
+for d in data:
+    table.add_row(d["Home Team"], d["Away Team"], d["Winner"], str(d["Score"]))
+
+print(table)

@@ -4,7 +4,7 @@ Create picks for NFL confidence pool with minimum effort.
 [sportsdata.io](https://sportsdata.io) is used to get stats. Calculations are
 done using stats to determine winning team and confidence in terms of points.
 
-Only ["unscambled"](https://sportsdata.io/developers/faq#scrambled-data) 
+Only ["unscrambled"](https://sportsdata.io/developers/faq#scrambled-data) 
 (available in the API free trial) simple stats are used. More thoughtful 
 predictions using additional stats require a subscription.
 

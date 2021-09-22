@@ -64,8 +64,16 @@ cli_args = parser.parse_args()
 if not os.path.exists(cli_args.api_key):
     raise ValueError(f"File '{cli_args.api_key}' does not exist!")
 
-if cli_args.week < 1 or cli_args.week > 17:
-    raise ValueError(f"Invalid week - got {cli_args.week}; expected range [1, 17]")
+if cli_args.year >= 2021:
+    max_weeks = 18
+
+else:
+    max_weeks = 17
+
+if cli_args.week < 1 or cli_args.week > max_weeks:
+    raise ValueError(
+        f"Invalid week - got {cli_args.week}; expected range [1, {max_weeks}]"
+    )
 
 if cli_args.year > datetime.datetime.today().year:
     raise ValueError(

@@ -18,27 +18,27 @@ predictions using additional stats require a subscription.
 
 Will respond with -
 ```
-            2021 Week 1 Picks             
-┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
-┃ Home Team ┃ Away Team ┃ Winner ┃ Score ┃
-┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
-│ IND       │ SEA       │ IND    │ 1     │
-│ NO        │ GB        │ NO     │ 5     │
-│ TEN       │ ARI       │ TEN    │ 9     │
-│ BUF       │ PIT       │ BUF    │ 22    │
-│ NYG       │ DEN       │ NYG    │ 46    │
-│ WAS       │ LAC       │ WAS    │ 48    │
-│ ATL       │ PHI       │ ATL    │ 66    │
-│ CIN       │ MIN       │ MIN    │ 68    │
-│ LAR       │ CHI       │ LAR    │ 74    │
-│ NE        │ MIA       │ MIA    │ 93    │
-│ HOU       │ JAX       │ HOU    │ 106   │
-│ KC        │ CLE       │ KC     │ 122   │
-│ DET       │ SF        │ SF     │ 128   │
-│ CAR       │ NYJ       │ CAR    │ 162   │
-│ LV        │ BAL       │ BAL    │ 209   │
-│ TB        │ DAL       │ TB     │ 215   │
-└───────────┴───────────┴────────┴───────┘
+                 2021 Week 4 Picks                 
+┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
+┃ Home Team ┃ Away Team ┃ Score ┃ Winner ┃ Points ┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━┩
+│ GB        │ PIT       │ 1     │ GB     │ 1      │
+│ DAL       │ CAR       │ 2     │ CAR    │ 2      │
+│ LAR       │ ARI       │ 5     │ ARI    │ 3      │
+│ CHI       │ DET       │ 11    │ CHI    │ 4      │
+│ LAC       │ LV        │ 11    │ LV     │ 5      │
+│ NE        │ TB        │ 12    │ TB     │ 6      │
+│ SF        │ SEA       │ 16    │ SF     │ 7      │
+│ PHI       │ KC        │ 21    │ KC     │ 8      │
+│ ATL       │ WAS       │ 29    │ WAS    │ 9      │
+│ MIN       │ CLE       │ 31    │ CLE    │ 10     │
+│ NYJ       │ TEN       │ 31    │ TEN    │ 11     │
+│ MIA       │ IND       │ 33    │ IND    │ 12     │
+│ NO        │ NYG       │ 37    │ NO     │ 13     │
+│ DEN       │ BAL       │ 53    │ DEN    │ 14     │
+│ CIN       │ JAX       │ 58    │ CIN    │ 15     │
+│ BUF       │ HOU       │ 139   │ BUF    │ 16     │
+└───────────┴───────────┴───────┴────────┴────────┘
 ```
 
 A higher `Score` means a greater confidence.
